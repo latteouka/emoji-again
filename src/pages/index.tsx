@@ -64,7 +64,7 @@ const CreatePostWizard = () => {
         </button>
       )}
       {isPosting && (
-        <div className="flex h-full justify-items-center">
+        <div className="">
           <LoadingSpinner size={20} />
         </div>
       )}
