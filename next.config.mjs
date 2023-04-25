@@ -6,6 +6,9 @@ await import("./src/env.mjs");
 
 /** @type {import("next").NextConfig} */
 const nextConfig = async () => ({
+  images: {
+    domains: ["images.clerk.dev"],
+  },
   reactStrictMode: true,
 
   /**

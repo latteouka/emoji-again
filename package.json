@@ -12,6 +12,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@clerk/nextjs": "^4.16.4",
     "@prisma/client": "^4.11.0",
     "@react-three/drei": "^9.65.5",
     "@react-three/fiber": "^8.12.2",
@@ -20,7 +21,10 @@
     "@trpc/next": "^10.18.0",
     "@trpc/react-query": "^10.18.0",
     "@trpc/server": "^10.18.0",
+    "@upstash/ratelimit": "^0.4.2",
+    "@upstash/redis": "^1.20.4",
     "classnames": "^2.3.2",
+    "dayjs": "^1.11.7",
     "glsl-random": "^0.0.5",
     "gsap": "^3.11.5",
     "next": "^13.2.4",
@@ -28,6 +32,7 @@
     "raw-loader": "^4.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hot-toast": "^2.4.0",
     "react-merge-refs": "^2.0.1",
     "stats.js": "^0.17.0",
     "superjson": "1.12.2",
