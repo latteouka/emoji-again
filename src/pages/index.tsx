@@ -103,6 +103,9 @@ const Home: NextPage = () => {
 
   return (
     <Layout>
+      <div className="border-b border-slate-400 p-4 text-red-200">
+        Google has no username!?
+      </div>
       <div className="flex border-b border-slate-400 p-4">
         {!isSignedIn && (
           <div className="flex justify-center">
