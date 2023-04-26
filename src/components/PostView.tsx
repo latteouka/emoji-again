@@ -17,13 +17,13 @@ const PostView = (props: PostWithUser) => {
         width={56}
         height={56}
         className="rounded-full"
-        alt={`${author.username}'s profile picture`}
+        alt={`${author.id}'s profile picture`}
       />
 
       <div className="flex flex-col">
         <div className="flex gap-2 text-slate-300">
-          <Link href={`/@${author.username}`}>
-            <span className="font-bold">{`@${author.username}`}</span>
+          <Link href={`/${author.id}`}>
+            <span className="font-bold">{`${author.id}`}</span>
           </Link>
           <span>·</span>
           <Link href={`/post/${post.id}`}>

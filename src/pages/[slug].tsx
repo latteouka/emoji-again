@@ -24,10 +24,10 @@ const ProfileFeed = (props: { userId: string }) => {
   );
 };
 
-const Profile: NextPage<{ username: string }> = ({ username }) => {
+const Profile: NextPage<{ id: string }> = ({ id }) => {
   // start fetching asap
-  const { data: user } = api.profile.getUserByUsername.useQuery({
-    username,
+  const { data: user } = api.profile.getUserById.useQuery({
+    id,
   });
 
   // return empty div if user isn't loaded
@@ -45,13 +45,11 @@ const Profile: NextPage<{ username: string }> = ({ username }) => {
             width={128}
             height={128}
             className="absolute bottom-0 left-0 -mb-[64px] ml-4 rounded-full border-4 border-black"
-            alt={`${user.username ?? ""}'s profile picture`}
+            alt={`${user.id ?? ""}'s profile picture`}
           />
         </div>
         <div className="h-[64px]"></div>
-        <div className="p-4 text-2xl font-bold">{`@${
-          user.username ?? ""
-        }`}</div>
+        <div className="p-4 text-2xl font-bold">{`@${user.id ?? ""}`}</div>
         <div className="w-full border-b border-slate-400"></div>
         <ProfileFeed userId={user.id} />
       </Layout>
@@ -70,14 +68,12 @@ export const getStaticProps: GetStaticProps = async (
 
   if (typeof slug !== "string") throw new Error("no slug");
 
-  const username = slug.replace("@", "");
-
-  await ssg.profile.getUserByUsername.prefetch({ username });
+  await ssg.profile.getUserById.prefetch({ id: slug });
 
   return {
     props: {
       trpcState: ssg.dehydrate(),
-      username,
+      id: slug,
     },
   };
 };
