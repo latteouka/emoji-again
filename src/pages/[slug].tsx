@@ -39,7 +39,7 @@ const Profile: NextPage<{ id: string }> = ({ id }) => {
         <title>@{user.username}</title>
       </Head>
       <Layout>
-        <div className="relative h-36 bg-slate-400">
+        <div className="relative h-48 bg-slate-400">
           <Image
             src={user.profileImageUrl}
             width={128}
@@ -48,8 +48,8 @@ const Profile: NextPage<{ id: string }> = ({ id }) => {
             alt={`${user.id ?? ""}'s profile picture`}
           />
         </div>
-        <div className="h-[64px]"></div>
-        <div className="p-4 text-2xl font-bold">{`@${user.id ?? ""}`}</div>
+        <div className="h-48"></div>
+        <div className="p-4 text-xl font-bold">{`@${user.id ?? ""}`}</div>
         <div className="w-full border-b border-slate-400"></div>
         <ProfileFeed userId={user.id} />
       </Layout>
